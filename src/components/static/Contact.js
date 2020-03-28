@@ -12,7 +12,7 @@ const Contact = (props) => {
                 <Social />
             </div>
         )
-    } else if (props.location.pathname === '/contact/success') {
+    } else if (props.location.pathname === '/success') {
         return (
             <>
             <Helmet>
@@ -64,9 +64,10 @@ const Contact = (props) => {
                     <p>If you want a specific image and can't find it for sale, then contact me directly using the form below.</p>
                 </div>
                 <div className="centered contact">
+                    
                     <h2>Contact me</h2>
                     <p>Want to collaboarate on a creative project, or maybe get a photoshoot of you, your family and your friends? Contact me using the form below. Even if you just like the website and want to say hi, send me a message. I don't run mailing lists and I won't spam your inbox.</p>
-                    <form name="contact" method="post" action="/contact/success">
+                    <form name="contact" method="post" action="/success">
                         <input type="hidden" name="form-name" value="contact" />
                         <label htmlFor="name">Your Name:</label>
                         <input type="text" id="name" name="name" defaultValue="" /> 
