@@ -13,32 +13,33 @@ const Contact = (props) => {
             </div>
         )
     } else if (props.location.pathname === '/contact/success') {
-        <>
-        <Helmet>
-            <title>Contact Brendan, Travelling Photographer</title>
-            <meta name="description" content="Photography available as prints, or for editorial and advertising. Contact Brendan for more details" />
-        </Helmet>
-        <div class="cover contact"></div>
-        <div className="centered">
-            <h1>Follow my work</h1>
-            <p>I'm active on the following social networks. Come and say hi</p>
-            <Social />
-        </div>
-        <div className="centered photography">
-            <h2>Support me as a photographer</h2>
-            <p>Like my work? Want a print for your home or an image for your latest blog post or news article? I sell prints and digital downloads on the following websites.</p>
-            <ul>
-                <li> <a href="https://google.com">PicFair</a></li>
-                <li><a href="https://google.com">Society6</a></li>
-            </ul>
-            <p>PicFair offer the fairest prices for photographers, with no additional cost to you the consumer, and in my opinion is the best way to support me and the photography community.<br />Digital downloads on Picfair.com are also licensed for editorial or advertising use, sometimes both. Please check each individuals photos license before purchasing.</p>
-            <p>If you want a specific image and can't find it for sale, then contact me directly using the form below.</p>
-        </div>
-        <div className="centered contact">
-            <h2>Hey there!</h2>
-            <p>Thanks for getting in touch! I'll reply to you as soon as I can. Meanwhile you can follow me on Instagram, or view my portfolio on PicFair.</p>
-        </div>
-    </>
+        return (
+            <>
+            <Helmet>
+                <title>Contact Brendan, Travelling Photographer</title>
+                <meta name="description" content="Photography available as prints, or for editorial and advertising. Contact Brendan for more details" />
+            </Helmet>
+            <div class="cover contact"></div>
+            <div className="centered">
+                <h1>Follow my work</h1>
+                <p>I'm active on the following social networks. Come and say hi</p>
+                <Social />
+            </div>
+            <div className="centered photography">
+                <h2>Support me as a photographer</h2>
+                <p>Like my work? Want a print for your home or an image for your latest blog post or news article? I sell prints and digital downloads on the following websites.</p>
+                <ul>
+                    <li> <a href="https://google.com">PicFair</a></li>
+                    <li><a href="https://google.com">Society6</a></li>
+                </ul>
+                <p>PicFair offer the fairest prices for photographers, with no additional cost to you the consumer, and in my opinion is the best way to support me and the photography community.<br />Digital downloads on Picfair.com are also licensed for editorial or advertising use, sometimes both. Please check each individuals photos license before purchasing.</p>
+                <p>If you want a specific image and can't find it for sale, then contact me directly using the form below.</p>
+            </div>
+            <div className="centered contact">
+                <h2>Hey there!</h2>
+                <p>Thanks for getting in touch! I'll reply to you as soon as I can. Meanwhile you can follow me on Instagram, or view my portfolio on PicFair.</p>
+            </div>
+        </>)
     } else {
         return (
             <>
