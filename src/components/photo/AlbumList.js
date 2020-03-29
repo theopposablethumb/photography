@@ -59,7 +59,6 @@ class AlbumList extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className={`centered photography ${this.renderClassName()}`}>
                 <Helmet>

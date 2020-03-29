@@ -7,11 +7,13 @@ import AlbumList from './components/photo/AlbumList';
 import Album from './components/photo/Album';
 import Photo from './components/photo/Photo';
 import Contact from './components/static/Contact'
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
     return (
         <>
             <BrowserRouter>
+                <ScrollToTop />
                 <Header />
                 <Route path='/' exact component={Home} />
                 <Route path='/photography' exact component={AlbumList} />

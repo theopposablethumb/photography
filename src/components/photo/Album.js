@@ -111,20 +111,19 @@ class Album extends React.Component {
     }
 
     render(){
-        console.log(this.props);
         return (
-            <div className="centered photography album">
-                <Helmet>
-                    {this.renderPageTitle()}
-                    {this.renderMetaDescription()}    
-                </Helmet>
-                {this.renderTitle()}
-                {this.renderDescription()}
-                {this.renderPrimaryPhoto()}
-                <div className="photos">
-                    {this.renderPhotos()}
+                <div className="centered photography album">
+                    <Helmet>
+                        {this.renderPageTitle()}
+                        {this.renderMetaDescription()}    
+                    </Helmet>
+                    {this.renderTitle()}
+                    {this.renderDescription()}
+                    {this.renderPrimaryPhoto()}
+                    <div className="photos">
+                        {this.renderPhotos()}
+                    </div>
                 </div>
-            </div>
         );
     }
 

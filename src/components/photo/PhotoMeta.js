@@ -32,7 +32,6 @@ class PhotoMeta extends React.Component {
     }
 
     render() {
-        console.log(this.props.meta);
         return <>{this.renderMeta()}</>
     }
 }

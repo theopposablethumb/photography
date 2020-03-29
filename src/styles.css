@@ -11,7 +11,7 @@ Header and footer: #46495B
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:400,700&display=swap');
 
 body {font-size: 16px; font-family: 'Merriweather', serif; margin: 0; padding: 0; background: #46495B; color: #0F1422;}
-header, footer {padding: 1em 20%; background: #46495B;}
+header, footer {padding: 1em 20%; background: #46495B; box-sizing: border-box;}
 main {}
 
 h1, h2, h3, nav {font-family: 'Lato', sans-serif; font-weight: 700;}
@@ -26,7 +26,7 @@ blockquote {font-size: 1.4em; line-height: 1.6em; margin: 1.2em 2em 1.6em 2em; c
 blockquote::after{content: '\201C'; font-size: 8em; font-style: normal; color: #FAD7C3; position: absolute; top: 0.3em; left: -0.3em; z-index: -1;}
 
 header {position: fixed; z-index: 2; width: 100%; box-sizing: border-box; box-shadow: 0px 2px 8px 0px rgba(70,73,91,0.8);}
-footer {padding-bottom: 2em; overflow: hidden;}
+footer {padding-bottom: 2em; overflow: hidden; width: 100%;}
 
 header h1 {display: inline-block; width: fit-content; font-size: 1.4em; font-weight: normal; letter-spacing: .07em; color: #E6B1A4; margin: 0.5em 0;}
 header nav {float: right;}
@@ -49,13 +49,12 @@ div.photograph, div.album {padding-top: 5vh;}
 .album h1 {margin-top: 3em;}
 div.photograph {background:  #46495B; position: relative; max-width: 1600px; margin: auto;}
 .photograph h1 {margin: 3em 0 0 20%; color: #FAD7C3;}
-div.contact {background: #7B707C; color: #E6B1A4;}
-div.contact a {color: #FAD7C3; }
-div.contact a:hover {color: #E6B1A4;}
-div.contact a:visited {color: #E6B1A4;}
+div.contact {background: #7B707C; color: #FAD7C3;}
+div.contact a {color: #E6B1A4; }
+div.contact a:hover {color: #FAD7C3;}
 
 article {padding: 1.5em 1.5em; margin: 2em 0 0; background: #F5EEE1; box-shadow: 0 0 2px #B59198; border-radius: 4px;}
-article h1:first-child, article h2:first-child {margin: 0;}
+
 .intro article, .blog article {position: relative; padding: 0; background: none; box-shadow: none;}
 article.intro {background: none; box-shadow: none; margin-top: 6em;}
 article img {width: 100%; height: 300px; background: #7B707C; margin: 1.6em 0 0.8em;}
@@ -91,9 +90,10 @@ figcaption p {margin-top: 1em;}
 figcaption p, figcaption ul, figcaption ol {font-size: 1em;}
 
 .navigation {margin-top: 0;}
-.navigation button, .navigation a {margin: 0; width: 33%; display: block; font-size: 1.1em; float: left;}
+.navigation button {width: 33%;}
+.navigation button, .navigation a {margin: 0; display: block; font-size: 1.1em; float: left;}
 .navigation button:last-of-type {float: right; clear: none;}
-.navigation a {clear: both; margin: 3.2em 0; color: #FAD7C3;}
+.navigation a {clear: both; margin: 1.6em 0; color: #FAD7C3;}
 .navigation a:hover {color: #E6B1A4;}
 
 article ul.meta {margin-top: 1em; line-height: 1em;}
@@ -115,6 +115,7 @@ button {background: #E6B1A4; margin: 1em 0 0 12vw; box-shadow: none;}
 button:hover {background: #FAD7C3;}
 
 @media screen and (max-width: 1260px) {
+	.landscape ul.meta li {display: inline-block; width: 49%;}
 	footer div, footer ul {float: none;}
 	footer ul {margin-top: 2.2em;}
 }
@@ -125,7 +126,12 @@ button:hover {background: #FAD7C3;}
 	header nav {float: none;}
 	nav a {font-size: 1.3em;}
 	nav a:first-child {padding-left: 0;}
+
+	.album h1 {margin-top: 0.8em;}
 	
+	div.photograph {padding: 0;}
+	.photograph h1 {margin-top: 1em;}
+
 	form {margin-top: 3.2em; width: 80%;}
     label, input, textarea, button {width: 100%; float: none;}
     input, textarea {margin: 0.8em 0 2.4em;}
@@ -133,13 +139,18 @@ button:hover {background: #FAD7C3;}
 }
 
 @media screen and (max-width: 1024px) {
-	figure.photo, .photograph h1 {display: block; margin: 3.2em auto 0; width: 80%}
-	.photograph h1 {margin-top: 1em;}
-	.navigation {margin-top: 0; margin-bottom: 3.2em;}
+	figure.photo, .photograph h1, .navigation {display: block; margin: 1em auto 0; width: 80%}
+	
+	.navigation {margin-top: 2.2em; margin-bottom: 3.2em;}
 	figure.photo.portrait img {width: 100%; float: none;}
 	.portrait figcaption {width: 100%; padding: 2em 0 0;}
-	.portrait ul.meta li, .landscape ul.meta li {display: inline-block; width: 49%;}
+	.landscape ul.meta li, .portrait. ul.meta li {display: inline-block; width: 49%;}
 } 
+
+@media screen and (max-width: 880px) {
+	figure.album {display: block; width: 100%; margin: 0.8em 0 0;}
+	figure.album:first-child {margin-top: 1.6em;}
+}
 
 @media screen and (max-width: 800px) {
 	form {width: 100%;}
@@ -158,7 +169,10 @@ button:hover {background: #FAD7C3;}
 	.intro article, .blog article {border: none;}
 	
 	figure.album {display: block; width: 100%; margin: 0.8em 0 0;}
-	figure.album:first-child, article.intro {margin-top: 1.6em;}
+	article.intro {margin-top: 1.6em;}
+
+	.portrait figcaption, .landscape figcaption {padding-top: 1em;}
+	.portrait ul.meta li, .landscape ul.meta li {width: 100%;}
 	
 	a#next {position: static; font-size: 1em; color: #FAD7C3; text-decoration: underline;}
 	a#previous {position: static; font-size: 1em; color: #FAD7C3; text-decoration: underline;}
@@ -178,8 +192,8 @@ button:hover {background: #FAD7C3;}
 	footer p, footer ul {display: block; padding: .8em 10%;}
 	footer p {margin: 0;}
 	
-	div.centered {padding: 5vh 10vw 10vh;}
+	div.centered {padding: 1vh 10vw 5vh;}
 	
-	figure.photo {width: 90%;}
+	figure.photo, .photograph h1 {width: 90%;}
 	.portrait ul.meta li, .landscape ul.meta li {width: 100%; display: block;}
 }
