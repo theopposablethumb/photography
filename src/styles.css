@@ -62,8 +62,11 @@ article img:first-child {margin: 0;}
 img.profile {position: absolute; top: 0; left: -120px; width: 75px; height: auto; border: 5px solid #B59198; margin: 0; background: #7B707C;}
 
 
-figure.album, figure.primary {display: flex; width: 100%; background: #7B707C;  height: auto; margin: 2% 2% 2% 0; box-sizing: border-box; overflow: hidden; position: relative;}
-figure.album {float: left; width: 47%;}
+figure.album, figure.primary {display: flex; width: 100%; background: #7B707C;  height: auto; box-sizing: border-box; overflow: hidden; position: relative;}
+figure.primary {margin: 2% 2% 2% 0;}
+figure.album {float: left; width: 49%; margin: 2% 0 0;}
+figure.album:first-of-type, figure.album:nth-of-type(3) {margin-right: 2%;}
+
 figure.album img, figure.primary img {flex: 1; width: 100%; height: 350px; object-fit: cover;}
 figure.album figcaption {width: 100%; position: absolute; bottom: 0; left: 0; z-index: 1; box-sizing: border-box; padding: 0.5em 1em 1em; background: rgba(15,20,34, 0.6);}
 figure.album a {color: #FAD7C3; text-decoration: none; display: inline-block;}
