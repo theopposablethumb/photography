@@ -33,8 +33,7 @@ nav a {display: inline-block; padding: .5em; color: #FAD7C3;}
 nav a:hover {color: #E6B1A4;}
 
 footer div {float: left;}
-footer ul {float: right; list-style: none; padding: 0;}
-footer p, footer ul {font-size: 1em; margin: 1em 0 0 0; color: #E6B1A4;}
+footer p {font-size: 1em; margin: 1em 0 0 0; color: #E6B1A4;}
 footer li:last-child {margin-top: 1em;}
 footer a {color: #FAD7C3;}
 footer a:hover {color: #E6B1A4}
@@ -42,7 +41,7 @@ footer a:hover {color: #E6B1A4}
 .cover {height: 80vh; width: 100vw; padding: 0; background: url('https://farm66.staticflickr.com/65535/48726114616_f216831f57_b.jpg') no-repeat center center; background-size: cover;}
 .cover.contact {height: 60vh; width: 100vw; padding: 0; background: url('https://farm66.staticflickr.com/65535/48726511151_6c8ac7a129_b.jpg') no-repeat center center; background-size: cover; }
 
-div.centered {padding: 5vh 20vw 10vh; background: #FAD7C3; max-width: 1600px; margin: auto;}
+div.centered {padding: 5vh 20vw 10vh; background: #FAD7C3; max-width: 1600px; margin: auto; overflow: auto;}
 div.photography {background:  #E6B1A4; overflow: auto;}
 div.photograph, div.album {padding-top: 5vh;}
 .album h1 {margin-top: 3em;}
@@ -60,7 +59,19 @@ article img {width: 100%; height: 300px; background: #7B707C; margin: 1.6em 0 0.
 article img:first-child {margin: 0;}
 img.profile {position: absolute; top: 0; left: -120px; width: 75px; height: auto; border: 5px solid #B59198; margin: 0; background: #7B707C;}
 
+ul.social {list-style-type: none; padding: 0; float: left; width: 50%;}
+footer ul.social {float: right; width: fit-content; margin-top: 0; font-size: 1em;}
+ul.social a {display: block; width: fit-content; padding: 0.5em 0 0.5em 38px;}
+li.ig {background: url(./images/ig-dark.png) left center no-repeat;}
+li.s6 {background: url(./images/society6-dark.png) left center no-repeat;}
+li.pf {background: url(./images/picfair-dark.png) left center no-repeat;}
+li.li {background: url(./images/linkedin-dark.png) left center no-repeat;}
 
+.contact li.ig, footer li.ig {background: url(./images/ig-light.png) left center no-repeat;}
+.contact li.s6 {background: url(./images/society6-light.png) left center no-repeat;}
+.contact li.pf, footer li.pf {background: url(./images/picfair-light.png) left center no-repeat;}
+.contact li.li {background: url(./images/linkedin-light.png) left center no-repeat;}
+ 
 figure.album, figure.primary {display: flex; width: 100%; background: #7B707C;  height: auto; box-sizing: border-box; overflow: hidden; position: relative;}
 figure.primary {margin: 2% 2% 2% 0;}
 figure.album {float: left; width: 49%; margin: 2% 0 0;}
@@ -68,7 +79,8 @@ figure.album:first-of-type, figure.album:nth-of-type(3) {margin-right: 2%;}
 
 figure.album img, figure.primary img {flex: 1; width: 100%; height: 350px; object-fit: cover;}
 figure.album figcaption {width: 100%; position: absolute; bottom: 0; left: 0; z-index: 1; box-sizing: border-box; padding: 0.5em 1em 1em; background: rgba(15,20,34, 0.8);}
-figure.album a {color: #FAD7C3; text-decoration: none; display: inline-block;}
+figure.album p {margin: 0}
+figure.album figcaption a {color: #FAD7C3; text-decoration: none; display: block; padding: 0.4em 0;}
 figure.album a:hover {color: #E6B1A4;}
 
 .photos {display: flex; flex-wrap: wrap;}
@@ -118,7 +130,9 @@ button:hover {background: #FAD7C3;}
 
 @media screen and (max-width: 1260px) {
 	.landscape ul.meta li {display: inline-block; width: 49%;}
-	footer div, footer ul {float: none;}
+	footer div, footer ul.social {float: none;}
+	footer ul.social li {display: inline-block;}
+	footer ul.social li:last-child {margin-left: 3em; box-sizing: border-box}
 	footer ul {margin-top: 2.2em;}
 }
 
@@ -156,6 +170,8 @@ button:hover {background: #FAD7C3;}
 
 @media screen and (max-width: 800px) {
 	form {width: 100%;}
+	footer ul.social li {display: block;}
+	footer ul.social li:last-child {margin-left: 0;}
 }
 
 @media screen and (max-width: 600px) {

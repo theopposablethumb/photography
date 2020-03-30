@@ -20,7 +20,7 @@ class PhotoMeta extends React.Component {
             return(
                 <ul className="meta">
                     <li><strong>Camera:</strong> {this.props.meta.meta.camera}</li>
-                    <li><strong>Lens:</strong>{this.props.meta.meta.exif[27].raw._content}</li>
+                    <li><strong>Lens:</strong> {this.props.meta.meta.exif[27].raw._content}</li>
                     <li><strong>Focal Length:</strong> {this.props.meta.meta.exif[24].clean._content}</li>
                     <li><strong>Shutter Speed:</strong> {this.props.meta.meta.exif[11].raw._content}</li>
                     <li><strong>Aperture:</strong> {this.props.meta.meta.exif[12].clean._content}</li>

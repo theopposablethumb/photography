@@ -9,12 +9,17 @@ class PhotoDetail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {currentPhoto: this.props.location.state.photoId};
+        this.keyHandling = this.keyHandling.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchPhoto(this.state.currentPhoto);
         this.props.fetchPhotos(this.props.location.state.albumId);
-        //this.props.fetchSizes(this.state.currentPhoto);
+        window.addEventListener("keyup", this.keyHandling);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("keyup", this.keyHandling);
     }
 
     renderTitle() {
@@ -73,6 +78,16 @@ class PhotoDetail extends React.Component {
             prevPhoto = photoArray[index].id;
         }
         this.setState({currentPhoto: prevPhoto});
+    }
+
+    keyHandling(e) {
+        if(e.keyCode === 37) {
+            return this.selectPrevPhoto();
+        } else if (e.keyCode === 39) {
+            return this.selectNextPhoto();
+        } else {
+            return null;
+        }
     }
 
     render() {
