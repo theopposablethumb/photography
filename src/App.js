@@ -20,7 +20,6 @@ const App = () => {
                 <Route path='/photography/:album' exact component={Album} />
                 <Route path='/photography/:album/:photo' component={Photo} />
                 <Route path='/contact' exact component={Contact} />
-                <Route path='/success' component={Contact} />
                 <Footer />
             </BrowserRouter>
         </>
