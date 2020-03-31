@@ -218,7 +218,7 @@ button:hover {background: #FAD7C3;}
 @media screen and (max-width: 450px) {
 	footer {padding: 1em 0;}
 	
-	footer p, footer ul {display: block; padding: .8em 10%;}
+	footer p, footer ul.social {display: block; padding: .8em 10%;}
 	footer p {margin: 0;}
 	
 	div.centered {padding: 1vh 10vw 5vh;}
