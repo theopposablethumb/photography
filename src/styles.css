@@ -15,14 +15,19 @@ header, footer {padding: 1em 20%; background: #46495B; box-sizing: border-box;}
 
 h1, h2, h3, nav {font-family: 'Lato', sans-serif; font-weight: 700;}
 nav {font-size: 1.2em; font-weight: 400;}
-h1 {font-size: 2em; line-height: 1.2em;  margin: 1.2em 0 0 0;}
-h2 {font-size: 1.6em;  margin: 1.2em 0 0 0;}
+h1 {font-size: 2.2em; line-height: 1.2em;  margin: 1.2em 0 0 0;}
+h2 {font-size: 2em;  margin: 1.2em 0 0 0;}
 h3 {font-size: 1.4em; margin: 1.2em 0 0 0;}
 p, ul, ol, label, input, textarea, button {font-size: 1.2em; line-height: 1.6em; margin: 1.6em 0 0 0;}
 a {color: #46495B;}
 a:hover {color: #7B707C; }
 blockquote {font-size: 1.4em; line-height: 1.6em; margin: 1.2em 2em 1.6em 2em; color: #7B707C; font-style: italic; position: relative; z-index: 1;}
-blockquote::after{content: '\201C'; font-size: 8em; font-style: normal; color: #FAD7C3; position: absolute; top: 0.3em; left: -0.3em; z-index: -1;}
+blockquote::after{content: '\201C'; font-size: 8em; font-style: normal; color: #E6B1A4; position: absolute; top: 0.3em; left: -0.3em; z-index: -1;}
+
+h2 a {text-decoration: none;}
+h2 a:hover {text-decoration: underline;}
+p.date {margin-top: 0.8em; font-size: 1em; font-style: italic;}
+a.readMore {font-style: italic;}
 
 header {position: fixed; z-index: 2; width: 100%; box-sizing: border-box; box-shadow: 0px 2px 8px 0px rgba(70,73,91,0.8);}
 footer {padding-bottom: 2em; overflow: hidden; width: 100%;}
@@ -51,13 +56,17 @@ div.contact {background: #7B707C; color: #FAD7C3;}
 div.contact a {color: #E6B1A4; }
 div.contact a:hover {color: #FAD7C3;}
 
-article {padding: 1.5em 1.5em; margin: 2em 0 0; background: #F5EEE1; box-shadow: 0 0 2px #B59198; border-radius: 4px;}
+article {margin: 6em 0 0;}
 
 .intro article, .blog article {position: relative; padding: 0; background: none; box-shadow: none;}
-article.intro {background: none; box-shadow: none; margin-top: 6em;}
-article img {width: 100%; height: 300px; background: #7B707C; margin: 1.6em 0 0.8em;}
+article.intro {margin-top: 6.4em;}
+article figure {margin: 3.2em 0 1.6em;}
+article img {width: 100%; height: auto; margin: 1.6em 0 0.8em;}
 article img:first-child {margin: 0;}
 img.profile {position: absolute; top: 0; left: -120px; width: 75px; height: auto; border: 5px solid #B59198; margin: 0; background: #7B707C;}
+
+.blog article::before {content: ''; position: absolute; top: 0; left: -120px; width: 75px; height: 122px; background: url('../src/images/blogpost.png') no-repeat;}
+
 
 ul.social {list-style-type: none; padding: 0; float: left; width: 50%;}
 footer ul.social {float: right; width: fit-content; margin-top: 0; font-size: 1em;}
@@ -148,6 +157,8 @@ button:hover {background: #FAD7C3;}
 	div.photograph {padding: 0;}
 	.photograph h1 {margin-top: 1em;}
 
+	article.intro {margin-top: 0;}
+
 	form {margin-top: 3.2em; width: 80%;}
     label, input, textarea, button {width: 100%; float: none;}
     input, textarea {margin: 0.8em 0 2.4em;}
@@ -164,11 +175,15 @@ button:hover {background: #FAD7C3;}
 } 
 
 @media screen and (max-width: 880px) {
+	img.profile {position: static; float: left; margin: 1.6em 1em 1.6em 0;}
+	.blog article::before {display: none;}
 	figure.album {display: block; width: 100%; margin: 0.8em 0 0;}
 	figure.album:first-child {margin-top: 1.6em;}
 }
 
 @media screen and (max-width: 800px) {
+	div.centered {padding: 0 10% 10vh;}
+	article h2 {margin-top: 0;}
 	form {width: 100%;}
 	footer ul.social li {display: block;}
 	footer ul.social li:last-child {margin-left: 0;}
@@ -180,14 +195,10 @@ button:hover {background: #FAD7C3;}
 	
 	p, ul, ol, label, input, textarea, button {font-size: 1em;}
 	
-	img.profile {position: static; float: left; margin: 1.6em 1em 0 0;}
-	
-	article {padding: 3.2em 0 1.8em; margin: 0.15em; background: none; border-bottom: 2px solid  #7B707C; border-top: 2px solid  #7B707C; box-shadow: none; border-radius: 0;}
-	article.intro {border-top: none; margin-top: 0;}
-	.intro article, .blog article {border: none;}
+	article {padding: 3.2em 0 1.8em; margin: 0.15em;}
+	article.intro {padding: 0 0 3em;}
 	
 	figure.album {display: block; width: 100%; margin: 0.8em 0 0;}
-	article.intro {margin-top: 1.6em;}
 
 	.portrait figcaption, .landscape figcaption {padding-top: 1em;}
 	.portrait ul.meta li, .landscape ul.meta li {width: 100%;}

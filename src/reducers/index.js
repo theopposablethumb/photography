@@ -4,6 +4,8 @@ import photosReducer from '../reducers/photosReducer';
 import photoReducer from '../reducers/photoReducer';
 import sizeReducer from '../reducers/sizeReducer';
 import metaReducer from '../reducers/metaReducer';
+import blogPostsReducer from '../reducers/blogPostsReducer';
+import blogPostReducer from '../reducers/blogPostReducer';
 
 export default combineReducers({
     albums: albumsReducer,
@@ -11,4 +13,6 @@ export default combineReducers({
     photo: photoReducer,
     size: sizeReducer,
     meta: metaReducer,
+    blog: blogPostsReducer,
+    post: blogPostReducer
 });

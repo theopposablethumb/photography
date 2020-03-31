@@ -6,6 +6,8 @@ import Footer from './components/static/Footer';
 import AlbumList from './components/photo/AlbumList';
 import Album from './components/photo/Album';
 import Photo from './components/photo/Photo';
+import Blog from './components/blog/Blog';
+import BlogPost from './components/blog/BlogPost';
 import Contact from './components/static/Contact'
 import ScrollToTop from './components/ScrollToTop';
 
@@ -19,7 +21,9 @@ const App = () => {
                 <Route path='/photography' exact component={AlbumList} />
                 <Route path='/photography/:album' exact component={Album} />
                 <Route path='/photography/:album/:photo' component={Photo} />
-                <Route path='/contact' exact component={Contact} />
+                <Route path='/blog' exact component={Blog} />
+                <Route path='/blog/:post-:id' component={BlogPost} />
+                <Route path='/contact' component={Contact} />
                 <Footer />
             </BrowserRouter>
         </>

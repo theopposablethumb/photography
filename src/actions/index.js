@@ -1,4 +1,5 @@
 import flickr from '../api/flickr';
+import tumblr from '../api/tumblr';
 
 const userId = '&user_id=184012765@N08';
 const albumsMethod = '&method=flickr.photosets.getList';
@@ -6,6 +7,10 @@ const photosMethod = '&method=flickr.photosets.getPhotos';
 const photoMethod = '&method=flickr.photos.getInfo';
 const sizeMethod = '&method=flickr.photos.getSizes';
 const exifMethod = '&method=flickr.photos.getExif';
+
+const tumblrUuuid = 't:7fpz5aTZcOFQW7gnPljs8A';
+const postsMethod = '/posts';
+const tumblrParams = '&reblog_info=false&notes_info=false';
 
 export const fetchAlbums = () => {
     return async (dispatch) => {    
@@ -59,6 +64,28 @@ export const fetchMeta = (photoId) => {
         dispatch(
             { type: 'FETCH_META',
             payload: response.data.photo }
+        )
+    }
+};
+
+export const fetchBlogPosts = () => {
+    return async (dispatch) => {
+        const response = await tumblr.get(`/v2/blog/${tumblrUuuid}${postsMethod}?${process.env.REACT_APP_TUMBLR_API_KEY}${tumblrParams}&filter=raw`);
+
+        dispatch(
+            { type: 'FETCH_BLOG_POSTS',
+            payload: response.data.response.posts }
+        )
+    }
+};
+
+export const fetchBlogPost = (id) => {
+    return async (dispatch) => {
+        const response = await tumblr.get(`/v2/blog/${tumblrUuuid}${postsMethod}?${process.env.REACT_APP_TUMBLR_API_KEY}${tumblrParams}&${id}&filter=raw`);
+
+        dispatch(
+            { type: 'FETCH_BLOG_POST',
+            payload: response.data.response.posts[0] }
         )
     }
 };
