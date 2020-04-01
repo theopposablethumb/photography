@@ -59,7 +59,8 @@ div.contact a:hover {color: #FAD7C3;}
 article {margin: 6em 0 0;}
 
 .intro article, .blog article {position: relative; padding: 0; background: none; box-shadow: none;}
-article.intro {margin-top: 6.4em;}
+.blog article {padding-bottom: 4em; border-bottom: 2px solid #E6B1A4;}
+article.intro {margin-top: 6.4em; border-bottom: none; padding-bottom: 2em;}
 article figure {margin: 3.2em 0 1.6em;}
 article img {width: 100%; height: auto; margin: 1.6em 0 0.8em;}
 article img:first-child {margin: 0;}
@@ -190,6 +191,7 @@ button:hover {background: #FAD7C3;}
 }
 
 @media screen and (max-width: 600px) {
+	.cover {height: 60vh;}
 	footer {padding: 1em 20%;}
 	footer div, footer ul {float: none;}
 	
