@@ -82,7 +82,7 @@ class Album extends React.Component {
                         <figure key={photo.id}>
                             <Link 
                                 to={{
-                                    pathname: `${this.props.photos.title.toLowerCase()}/${photo.title.replace(/\s+/g, '-').toLowerCase()}`,
+                                    pathname: `${this.props.photos.title.toLowerCase()}/${photo.title.replace(/\s+/g, '-').replace(/,/g, '').toLowerCase()}`,
                                     state: {photoId: photo.id, albumId: this.props.location.state.albumId, albumPhotos: this.props.photos.photo}
                                 }}
                             >
@@ -118,8 +118,8 @@ class Album extends React.Component {
                         {this.renderMetaDescription()}    
                     </Helmet>
                     {this.renderTitle()}
-                    {this.renderDescription()}
                     {this.renderPrimaryPhoto()}
+                    {this.renderDescription()}
                     <div className="photos">
                         {this.renderPhotos()}
                     </div>

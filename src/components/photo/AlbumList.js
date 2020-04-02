@@ -30,7 +30,7 @@ class AlbumList extends React.Component {
         return this.props.albums.map(album => {
             let imgUrl = `https://farm${album.farm}.staticflickr.com/${album.server}/${album.primary}_${album.secret}_c.jpg`;
             let imgTitle = album.title._content;
-            let imgCaption = album.description._content;
+            let imgCaption = album.description._content.split('.')[0];
             return (
                 <figure className="album" key={album.id}>
                     <Link to={{

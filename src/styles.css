@@ -94,7 +94,7 @@ figure.album p {margin: 0}
 figure.album figcaption a {color: #FAD7C3; text-decoration: none; display: block; padding: 0.4em 0;}
 figure.album a:hover {color: #E6B1A4;}
 
-.photos {display: flex; flex-wrap: wrap;}
+.photos {display: flex; flex-wrap: wrap; margin-top: 3.2em;}
 .photos figure {height: 30vh; flex-grow: 1; margin: 0.5em; overflow: hidden;}
 figure.primary, .photos figure, figure.album {box-shadow: 0 0 2px #46495B; border-radius: 2px;}
 .photos figure:hover, figure.album:hover {box-shadow: 0 2px 4px #46495B;}

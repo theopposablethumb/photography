@@ -61,21 +61,21 @@ class PhotoDetail extends React.Component {
         let nextPhoto;
         if(index >= 0 && index < photoArray.length - 1) {
             nextPhoto = photoArray[index +1].id;
-        } else {
-            nextPhoto = photoArray[index.length - 1].id;
+        } else if (index >= photoArray.length - 1) {
+            nextPhoto = photoArray[0].id;
         }
         this.setState({currentPhoto: nextPhoto});
     }
 
-    async selectPrevPhoto(photoId) {
+    selectPrevPhoto(photoId) {
         photoId = this.state.currentPhoto;
         let photoArray = this.props.photo.photos.photo;
         let index = photoArray.findIndex(p => p.id === photoId); //find index of object key in array
         let prevPhoto;
-        if(index > 0 && index < photoArray.length - 1) {
+        if(index > 0 && index <= photoArray.length - 1) {
             prevPhoto = photoArray[index -1].id;
-        } else {
-            prevPhoto = photoArray[index].id;
+        } else if (index === 0) {
+            prevPhoto = photoArray[photoArray.length - 1].id;
         }
         this.setState({currentPhoto: prevPhoto});
     }

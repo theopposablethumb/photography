@@ -5,8 +5,15 @@ import { fetchMeta } from '../../actions';
 class PhotoMeta extends React.Component {
 
     componentDidMount() {
+        console.log('mount ' + this.props.photoId);
         this.props.fetchMeta(this.props.photoId);
     }
+
+    componentDidUpdate(prevProps) {
+        if(this.props.photoId !== prevProps.photoId) {
+            this.props.fetchMeta(this.props.photoId); 
+        }
+      }
 
     formatDate(date) {
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -19,6 +26,7 @@ class PhotoMeta extends React.Component {
       }
 
     renderMeta() {
+        console.log(this.props.photoId);
         if (!this.props.meta.meta) {
             return <p>fire when ready</p>
         } else {
