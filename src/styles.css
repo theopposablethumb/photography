@@ -60,6 +60,7 @@ article {margin: 6em 0 0;}
 
 .intro article, .blog article {position: relative; padding: 0; background: none; box-shadow: none;}
 .blog article {padding-bottom: 4em; border-bottom: 2px solid #E6B1A4;}
+.blog article:last-child {padding-bottom: 2em; border-bottom: none;}
 article.intro {margin-top: 6.4em; border-bottom: none; padding-bottom: 2em;}
 article figure {margin: 3.2em 0 1.6em;}
 article img {width: 100%; height: auto; margin: 1.6em 0 0.8em;}

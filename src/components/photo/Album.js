@@ -82,7 +82,7 @@ class Album extends React.Component {
                         <figure key={photo.id}>
                             <Link 
                                 to={{
-                                    pathname: `${this.props.photos.title}/${photo.title}`,
+                                    pathname: `${this.props.photos.title.toLowerCase()}/${photo.title.replace(/\s+/g, '-').toLowerCase()}`,
                                     state: {photoId: photo.id, albumId: this.props.location.state.albumId, albumPhotos: this.props.photos.photo}
                                 }}
                             >

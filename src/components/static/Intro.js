@@ -3,7 +3,7 @@ import portrait from '../../images/bren-small.jpg';
 
 const Intro = () => {
     return (
-        <div class="centered intro">
+        <div className="centered intro">
 			<article>
 				<h1>Hi, I'm a photographer who likes to travel</h1>
 				<img src={portrait} className='profile' alt='Portrait of Brendan' title='Brendan' />

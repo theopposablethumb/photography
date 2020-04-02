@@ -9,8 +9,13 @@ class PhotoMeta extends React.Component {
     }
 
     formatDate(date) {
-        const dateObj = new Date(date + 'T00:00:00');
-        return new Intl.DateTimeFormat('en-US').format(dateObj);
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const dateObj = new Date(this.props.meta.meta.exif[31].raw._content.replace(':', '-'));
+        const year = dateObj.getFullYear();
+        const monthName = months[dateObj.getMonth()]; //get the month in the date as a number and pass it as an index to the array or month strings
+        const day = dateObj.getDate();
+        const formattedDate = `${day} ${monthName} ${year}`;
+        return formattedDate;
       }
 
     renderMeta() {
@@ -25,7 +30,7 @@ class PhotoMeta extends React.Component {
                     <li><strong>Shutter Speed:</strong> {this.props.meta.meta.exif[11].raw._content}</li>
                     <li><strong>Aperture:</strong> {this.props.meta.meta.exif[12].clean._content}</li>
                     <li><strong>ISO:</strong> {this.props.meta.meta.exif[14].raw._content}</li>
-                    <li><strong>Date taken:</strong> {this.props.meta.meta.exif[31].raw._content}</li>
+                    <li><strong>Date taken:</strong> {this.formatDate()}</li>
                 </ul>
             )
         }
