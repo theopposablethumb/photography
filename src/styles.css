@@ -178,8 +178,8 @@ button:hover {background: #FAD7C3;}
 @media screen and (max-width: 880px) {
 	img.profile {position: static; float: left; margin: 1.6em 1em 1.6em 0;}
 	.blog article::before {display: none;}
-	figure.album {display: block; width: 100%; margin: 0.8em 0 0;}
-	figure.album:first-child {margin-top: 1.6em;}
+	div.albumCover {display: block; width: 100%; margin: 0.8em 0 0;}
+	div.albumCover:first-child {margin-top: 1.6em;}
 }
 
 @media screen and (max-width: 800px) {
@@ -200,7 +200,7 @@ button:hover {background: #FAD7C3;}
 	article {padding: 3.2em 0 1.8em; margin: 0.15em;}
 	article.intro {padding: 0 0 3em;}
 	
-	figure.album {display: block; width: 100%; margin: 0.8em 0 0;}
+	div.albumCover {display: block; width: 100%; margin: 0.8em 0 0;}
 
 	.portrait figcaption, .landscape figcaption {padding-top: 1em;}
 	.portrait ul.meta li, .landscape ul.meta li {width: 100%;}
