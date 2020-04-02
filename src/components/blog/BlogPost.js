@@ -39,11 +39,9 @@ class BlogPost extends React.Component {
 
     render() {
         return (
-            <>
-                <div className='centered'>
-                    {this.renderBlogPost()}
-                </div>
-            </>
+            <div className='centered'>
+                {this.renderBlogPost()}
+            </div>
             )
     }
 }

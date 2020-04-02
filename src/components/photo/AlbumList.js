@@ -34,22 +34,17 @@ class AlbumList extends React.Component {
             let style = {backgroundImage: `url(${imgUrl})`, backgroundPosition: 'center center', backgroundSize: 'cover'};
             return (
                 <div className="albumCover" style={style} key={album.id}>
-                    <Link to={{
-                                pathname: `photography/${album.title._content.toLowerCase()}`,
-                                state: {albumId: album.id, title: album.title._content, description: album.description._content}
-                            }}>
-                        </Link>
                     <div className='caption'>
                         <h2>
                             <Link to={{
-                                pathname: `photography/${album.title._content.toLowerCase()}`,
-                                state: {albumId: album.id, title: album.title._content, description: album.description._content}
+                                pathname: `photography/${album.title._content.toLowerCase()}-${album.id}`,
+                                state: { title: album.title._content, description: album.description._content}
                             }}>{imgTitle}</Link>
                         </h2>
                         <p>
                             <Link to={{
-                                pathname: `photography/${album.title._content.toLowerCase()}`,
-                                state: {albumId: album.id, title: album.title._content, description: album.description._content}
+                                pathname: `photography/${album.title._content.toLowerCase()}-${album.id}`,
+                                state: { title: album.title._content, description: album.description._content}
                             }}>{imgCaption}
                         </Link></p>
                     </div>

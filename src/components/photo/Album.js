@@ -2,30 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { fetchPhotos } from '../../actions';
+import { fetchPhotos, fetchAlbums } from '../../actions';
 
 class Album extends React.Component {
 
-    //It is possible however a lot of other props are already dependent on location.state... so will need further refactoring
     componentDidMount() {
-        if (!this.props.history.location.state) {
-            switch (this.props.location.pathname) {
-                case '/photography/landscapes':
-                    this.props.fetchPhotos('72157710823336551');
-                    break;
-                case '/photography/street':
-                    this.props.fetchPhotos('72157710825244592');
-                    break;
-                case 'photography/portraits':
-                    this.props.fetchPhotos('72157710824310687');
-                    break;
-                default:
-                    this.props.fetchPhotos('72157710773833253');
-            }
-                 
-        } else {
-            this.props.fetchPhotos(this.props.location.state.albumId);
-        }
+        this.props.fetchPhotos(this.props.match.params.aid);
+        this.props.fetchAlbums();
     }
 
     renderTitle() {
@@ -36,11 +19,16 @@ class Album extends React.Component {
         }
     }
 
+    findAlbum() {
+        let albumId = this.props.match.params.aid;
+        return this.props.albums.find(album => albumId === album.id);
+    }
+
     renderDescription() {
-        if (!this.props.history.location.state) {
-            return <p>Photography from around the world!</p>
+        if(!this.props.albums.length) {
+            return <p>Spinning up the flux capacitor</p>
         } else {
-            return <p>{this.props.location.state.description}</p>
+            return <p>{this.findAlbum().description._content}</p>
         }
     }
 
@@ -53,10 +41,10 @@ class Album extends React.Component {
     }
 
     renderMetaDescription() {
-        if (!this.props.history.location.state) {
-            return <meta name="description" content='Cities, landscapes, and people from around the world photographed by Brendan Meachen.' />
+        if(!this.props.albums.length) {
+            return <meta name="description" content='Photography from around the world!' />;
         } else {
-            return <meta name="description" content={this.props.location.state.description} />;
+            return <meta name="description" content={this.findAlbum().title._content } />;
         }
     }
 
@@ -64,34 +52,17 @@ class Album extends React.Component {
         if (!this.props.photos) {
             return <p>loading photos</p>;
         } else {
-            if (!this.props.history.location.state) { 
-                return this.props.photos.photo.map(photo => {
-                    let imgUrl = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}`;
-                    let imgSize = '_w.jpg';
-                    return (
-                        <figure key={photo.id}>
+            return this.props.photos.photo.map(photo => {
+                let imgUrl = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}`;
+                let imgSize = '_w.jpg';
+                return (
+                    <figure key={photo.id}>
+                        <Link to={ `${this.props.photos.title.toLowerCase()}-${this.props.match.params.aid}/${photo.title.replace(/\s+/g, '-').replace(/,/g, '').toLowerCase()}/${photo.id}`}>
                             <img src={`${imgUrl}${imgSize}`} alt={photo.title} title={photo.title} /> 
-                        </figure>
-                    )
-                })
-            } else {
-                return this.props.photos.photo.map(photo => {
-                    let imgUrl = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}`;
-                    let imgSize = '_w.jpg';
-                    return (
-                        <figure key={photo.id}>
-                            <Link 
-                                to={{
-                                    pathname: `${this.props.photos.title.toLowerCase()}/${photo.title.replace(/\s+/g, '-').replace(/,/g, '').toLowerCase()}`,
-                                    state: {photoId: photo.id, albumId: this.props.location.state.albumId, albumPhotos: this.props.photos.photo}
-                                }}
-                            >
-                                <img src={`${imgUrl}${imgSize}`} alt={photo.title} title={photo.title} /> 
-                            </Link>
-                        </figure>
-                    ); 
-                })
-            }
+                        </Link>
+                    </figure>
+                ); 
+            })
         }
     }
 
@@ -112,25 +83,25 @@ class Album extends React.Component {
 
     render(){
         return (
-                <div className="centered photography album">
-                    <Helmet>
-                        {this.renderPageTitle()}
-                        {this.renderMetaDescription()}    
-                    </Helmet>
-                    {this.renderTitle()}
-                    {this.renderPrimaryPhoto()}
-                    {this.renderDescription()}
-                    <div className="photos">
-                        {this.renderPhotos()}
-                    </div>
+            <div className="centered photography album">
+                <Helmet>
+                    {this.renderPageTitle()}
+                    {this.renderMetaDescription()}    
+                </Helmet>
+                {this.renderTitle()}
+                {this.renderPrimaryPhoto()}
+                {this.renderDescription()}
+                <div className="photos">
+                    {this.renderPhotos()}
                 </div>
-        );
+            </div>
+    );
     }
 
 }
 
 const mapStateToProps = (state, ownProps) => {
-    return { photos: state.photos};
+    return { photos: state.photos, albums: state.albums};
 }
 
-export default connect(mapStateToProps, {fetchPhotos: fetchPhotos})(Album);
+export default connect(mapStateToProps, {fetchPhotos: fetchPhotos, fetchAlbums: fetchAlbums})(Album);

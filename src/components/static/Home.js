@@ -4,8 +4,7 @@ import AlbumList from '../photo/AlbumList';
 import BlogList from '../blog/BlogList';
 import Contact from './Contact';
 
-const Home = (props) => {
-    console.log(props);
+const Home = () => {
     return (
         <>
             <div className="cover"></div>

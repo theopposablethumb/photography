@@ -19,8 +19,8 @@ const App = () => {
                 <Header />
                 <Route path='/' exact component={Home} />
                 <Route path='/photography' exact component={AlbumList} />
-                <Route path='/photography/:album' exact component={Album} />
-                <Route path='/photography/:album/:photo' component={Photo} />
+                <Route path='/photography/:album-:aid' exact component={Album} />
+                <Route path='/photography/:album-:aid/:photo/:pid' component={Photo} />
                 <Route path='/blog' exact component={Blog} />
                 <Route path='/blog/:post-:id' component={BlogPost} />
                 <Route path='/contact' component={Contact} />

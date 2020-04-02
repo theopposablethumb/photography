@@ -8,13 +8,13 @@ import { fetchPhoto, fetchPhotos } from '../../actions';
 class PhotoDetail extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {currentPhoto: this.props.location.state.photoId};
+        this.state = {currentPhoto: this.props.match.params.pid};
         this.keyHandling = this.keyHandling.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchPhoto(this.state.currentPhoto);
-        this.props.fetchPhotos(this.props.location.state.albumId);
+        this.props.fetchPhotos(this.props.match.params.aid);
         window.addEventListener("keyup", this.keyHandling);
     }
 
@@ -95,7 +95,7 @@ class PhotoDetail extends React.Component {
             <div className="photograph">
                 <Helmet>
                     {this.renderPageTitle()}
-                    
+                    {this.renderMetaDescription()}
                 </Helmet>
                 {this.renderTitle()}
                 {this.renderPhoto()}
@@ -104,10 +104,7 @@ class PhotoDetail extends React.Component {
                     <button onClick={()=> this.selectPrevPhoto()} >Previous photo</button>
                     <button onClick={()=> this.selectNextPhoto()} >Next photo</button>
                 
-                    <Link to={{
-                        pathname: `/photography/${this.props.match.params.album}`,
-                        state: {albumId: this.props.location.state.albumId}
-                    }}>
+                    <Link to={{pathname: `/photography/${this.props.match.params.album}-${this.props.match.params.aid}`}}>
                         Back to gallery
                     </Link>
                 </div>

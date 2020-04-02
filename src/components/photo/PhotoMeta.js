@@ -5,7 +5,6 @@ import { fetchMeta } from '../../actions';
 class PhotoMeta extends React.Component {
 
     componentDidMount() {
-        console.log('mount ' + this.props.photoId);
         this.props.fetchMeta(this.props.photoId);
     }
 
@@ -26,7 +25,6 @@ class PhotoMeta extends React.Component {
       }
 
     renderMeta() {
-        console.log(this.props.photoId);
         if (!this.props.meta.meta) {
             return <p>fire when ready</p>
         } else {
