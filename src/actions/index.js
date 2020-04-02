@@ -89,3 +89,14 @@ export const fetchBlogPost = (id) => {
         )
     }
 };
+
+export const fetchBlogRecentPosts = () => {
+    return async (dispatch) => {
+        const response = await tumblr.get(`/v2/blog/${tumblrUuuid}${postsMethod}?${process.env.REACT_APP_TUMBLR_API_KEY}${tumblrParams}&limit=5&filter=raw`);
+
+        dispatch(
+            { type: 'FETCH_BLOG_RECENT_POSTS',
+            payload: response.data.response.posts }
+        )
+    }
+};

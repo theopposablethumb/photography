@@ -106,8 +106,8 @@ class Album extends React.Component {
 
     renderPrimaryPhoto() {
         let imgUrl = `https://farm${this.findPrimaryPhoto().farm}.staticflickr.com/${this.findPrimaryPhoto().server}/${this.findPrimaryPhoto().id}_${this.findPrimaryPhoto().secret}_b.jpg`;
-        let alt = this.findPrimaryPhoto().title;
-        return <figure className="primary"><img src={imgUrl} alt={alt} title={alt} /></figure>;
+        let style = {backgroundImage: `url(${imgUrl})`, backgroundPosition: 'center center', backgroundSize: 'cover'};
+        return <div className="primary" style={style}></div>;
     }
 
     render(){

@@ -17,15 +17,15 @@ h1, h2, h3, nav {font-family: 'Lato', sans-serif; font-weight: 700;}
 nav {font-size: 1.2em; font-weight: 400;}
 h1 {font-size: 2.2em; line-height: 1.2em;  margin: 1.2em 0 0 0;}
 h2 {font-size: 2em;  margin: 1.2em 0 0 0;}
-h3 {font-size: 1.4em; margin: 1.2em 0 0 0;}
+h3 {font-size: 1.6em; margin: 1.2em 0 0 0; font-weight: 400;}
 p, ul, ol, label, input, textarea, button {font-size: 1.2em; line-height: 1.6em; margin: 1.6em 0 0 0;}
 a {color: #46495B;}
 a:hover {color: #7B707C; }
 blockquote {font-size: 1.4em; line-height: 1.6em; margin: 1.2em 2em 1.6em 2em; color: #7B707C; font-style: italic; position: relative; z-index: 1;}
 blockquote::after{content: '\201C'; font-size: 8em; font-style: normal; color: #E6B1A4; position: absolute; top: 0.3em; left: -0.3em; z-index: -1;}
 
-h2 a {text-decoration: none;}
-h2 a:hover {text-decoration: underline;}
+h2 a, h3 a {text-decoration: none;}
+h2 a:hover, h3 a:hover {text-decoration: underline;}
 p.date {margin-top: 0.8em; font-size: 1em; font-style: italic;}
 a.readMore {font-style: italic;}
 
@@ -69,6 +69,7 @@ img.profile {position: absolute; top: 0; left: -120px; width: 75px; height: auto
 
 .blog article::before {content: ''; position: absolute; top: 0; left: -120px; width: 75px; height: 122px; background: url('../src/images/blogpost.png') no-repeat;}
 
+.blogList article {margin-top: 3.2em; }
 
 ul.social {list-style-type: none; padding: 0; float: left; width: 50%;}
 footer ul.social {float: right; width: fit-content; margin-top: 0; font-size: 1em;}
@@ -83,21 +84,19 @@ li.li {background: url(./images/linkedin-dark.png) left center no-repeat;}
 .contact li.pf, footer li.pf {background: url(./images/picfair-light.png) left center no-repeat;}
 .contact li.li {background: url(./images/linkedin-light.png) left center no-repeat;}
  
-figure.album, figure.primary {display: flex; width: 100%; background: #7B707C;  height: auto; box-sizing: border-box; overflow: hidden; position: relative;}
-figure.primary {margin: 2% 2% 2% 0;}
-figure.album {float: left; width: 49%; margin: 2% 0 0;}
-figure.album:first-of-type, figure.album:nth-of-type(3) {margin-right: 2%;}
+div.albumCover, div.primary {display: flex; width: 49%; height: 350px; box-sizing: border-box; position: relative; float: left; width: 49%; margin: 2% 0 0;}
+div.primary {width: 100%; margin: 2% 2% 2% 0;}
+div.albumCover:first-of-type, div.albumCover:nth-of-type(3) {margin-right: 2%;}
 
-figure.album img, figure.primary img {flex: 1; width: 100%; height: 350px; object-fit: cover;}
-figure.album figcaption {width: 100%; position: absolute; bottom: 0; left: 0; z-index: 1; box-sizing: border-box; padding: 0.5em 1em 1em; background: rgba(15,20,34, 0.8);}
-figure.album p {margin: 0}
-figure.album figcaption a {color: #FAD7C3; text-decoration: none; display: block; padding: 0.4em 0;}
-figure.album a:hover {color: #E6B1A4;}
+div.caption {width: 100%; position: absolute; bottom: 0; left: 0; z-index: 1; box-sizing: border-box; padding: 0.5em 1em 1em; background: rgba(15,20,34, 0.8);}
+div.caption p {margin: 0}
+div.caption a {color: #FAD7C3; text-decoration: none; display: block; padding: 0.4em 0;}
+div.caption a:hover {color: #E6B1A4;}
 
 .photos {display: flex; flex-wrap: wrap; margin-top: 3.2em;}
 .photos figure {height: 30vh; flex-grow: 1; margin: 0.5em; overflow: hidden;}
-figure.primary, .photos figure, figure.album {box-shadow: 0 0 2px #46495B; border-radius: 2px;}
-.photos figure:hover, figure.album:hover {box-shadow: 0 2px 4px #46495B;}
+div.primary, .photos figure, div.albumCover {box-shadow: 0 0 2px #46495B; border-radius: 2px;}
+.photos figure:hover, div.albumCover:hover {box-shadow: 0 2px 4px #46495B;}
 .photos img {max-height: 100%; min-width: 100%; object-fit: cover; vertical-align: bottom;}
 
 figure.photo, .navigation {display: inline-block; width: 60%; margin: 2em 20% 2em 20%; box-sizing: border-box;}
@@ -110,9 +109,9 @@ figcaption {padding: 1em 0; box-sizing: border-box; color: #FAD7C3; }
 .landscape figcaption {padding-top: 2em;}
 .portrait figcaption {float: left; padding: 0 0 0 2em; width: 33%;} 
 .photo figcaption p:first-child {margin-top: 0;}
-figcaption h2 {margin: 0;}
+figcaption h2, div.caption h2 {margin: 0;}
 figcaption p {margin-top: 1em;}
-figcaption p, figcaption ul, figcaption ol {font-size: 1em;}
+figcaption p, div.caption p, figcaption ul, figcaption ol {font-size: 1em;}
 
 .navigation {margin-top: 0;}
 .navigation button {width: 33%;}

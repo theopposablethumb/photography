@@ -31,14 +31,15 @@ class AlbumList extends React.Component {
             let imgUrl = `https://farm${album.farm}.staticflickr.com/${album.server}/${album.primary}_${album.secret}_c.jpg`;
             let imgTitle = album.title._content;
             let imgCaption = album.description._content.split('.')[0];
+            let style = {backgroundImage: `url(${imgUrl})`, backgroundPosition: 'center center', backgroundSize: 'cover'};
             return (
-                <figure className="album" key={album.id}>
+                <div className="albumCover" style={style} key={album.id}>
                     <Link to={{
                                 pathname: `photography/${album.title._content.toLowerCase()}`,
                                 state: {albumId: album.id, title: album.title._content, description: album.description._content}
-                            }}><img src={imgUrl} alt={imgCaption} title={imgTitle} />
+                            }}>
                         </Link>
-                    <figcaption>
+                    <div className='caption'>
                         <h2>
                             <Link to={{
                                 pathname: `photography/${album.title._content.toLowerCase()}`,
@@ -51,9 +52,9 @@ class AlbumList extends React.Component {
                                 state: {albumId: album.id, title: album.title._content, description: album.description._content}
                             }}>{imgCaption}
                         </Link></p>
-                    </figcaption>
+                    </div>
                     
-                </figure>
+                </div>
             )
         })
     }
