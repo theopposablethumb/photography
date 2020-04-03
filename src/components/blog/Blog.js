@@ -29,13 +29,13 @@ class Blog extends React.Component {
             return (
                 <article key={post.id}>
                     <h2>
-                        <Link to={`/blog/${post.title.replace(/\s+/g, '-').toLowerCase()}-${post.id}`}>
+                        <Link to={`/blog/${post.title.replace(/\s+/g, '_').toLowerCase()}-${post.id}`}>
                             {post.title}
                         </Link>
                     </h2>
                     <p className="date">Published on {this.formatDate(post.date)}</p>
                     <div dangerouslySetInnerHTML={{ __html: post.body_abstract}} />
-                    <p><Link to={`/blog/${post.title.replace(/\s+/g, '-').toLowerCase()}-${post.id}`} className="readMore">Read more...</Link></p>
+                    <p><Link to={`/blog/${post.title.replace(/\s+/g, '_').toLowerCase()}-${post.id}`} className="readMore">Read more...</Link></p>
                 </article>
             )
         })

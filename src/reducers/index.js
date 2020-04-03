@@ -5,7 +5,6 @@ import photoReducer from '../reducers/photoReducer';
 import sizeReducer from '../reducers/sizeReducer';
 import metaReducer from '../reducers/metaReducer';
 import blogPostsReducer from '../reducers/blogPostsReducer';
-import blogPostReducer from '../reducers/blogPostReducer';
 import recentBlogPostsReducer from '../reducers/recentBlogPostsReducer';
 
 export default combineReducers({
@@ -15,6 +14,5 @@ export default combineReducers({
     size: sizeReducer,
     meta: metaReducer,
     blog: blogPostsReducer,
-    post: blogPostReducer,
     recentPosts: recentBlogPostsReducer
 });

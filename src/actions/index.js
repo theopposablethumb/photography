@@ -79,17 +79,6 @@ export const fetchBlogPosts = () => {
     }
 };
 
-export const fetchBlogPost = (id) => {
-    return async (dispatch) => {
-        const response = await tumblr.get(`/v2/blog/${tumblrUuuid}${postsMethod}?${process.env.REACT_APP_TUMBLR_API_KEY}${tumblrParams}&${id}&filter=raw`);
-
-        dispatch(
-            { type: 'FETCH_BLOG_POST',
-            payload: response.data.response.posts[0] }
-        )
-    }
-};
-
 export const fetchBlogRecentPosts = () => {
     return async (dispatch) => {
         const response = await tumblr.get(`/v2/blog/${tumblrUuuid}${postsMethod}?${process.env.REACT_APP_TUMBLR_API_KEY}${tumblrParams}&limit=5&filter=raw`);
