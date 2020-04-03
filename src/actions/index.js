@@ -70,8 +70,8 @@ export const fetchMeta = (photoId) => {
 
 export const fetchBlogPosts = () => {
     return async (dispatch) => {
-        const response = await tumblr.get(`/v2/blog/${tumblrUuuid}${postsMethod}?${process.env.REACT_APP_TUMBLR_API_KEY}${tumblrParams}&filter=raw$callback=?`);
-
+        const response = await tumblr.get(`/v2/blog/${tumblrUuuid}${postsMethod}?${process.env.REACT_APP_TUMBLR_API_KEY}${tumblrParams}&filter=raw`);
+        console.log(response.data);
         dispatch(
             { type: 'FETCH_BLOG_POSTS',
             payload: response.data.response.posts }
@@ -81,8 +81,8 @@ export const fetchBlogPosts = () => {
 
 export const fetchBlogRecentPosts = () => {
     return async (dispatch) => {
-        const response = await tumblr.get(`/v2/blog/${tumblrUuuid}${postsMethod}?${process.env.REACT_APP_TUMBLR_API_KEY}${tumblrParams}&limit=5&filter=raw&callback=?`);
-
+        const response = await tumblr.get(`/v2/blog/${tumblrUuuid}${postsMethod}?${process.env.REACT_APP_TUMBLR_API_KEY}${tumblrParams}&limit=5&filter=raw`);
+        console.log('bren ' + response.data);
         dispatch(
             { type: 'FETCH_BLOG_RECENT_POSTS',
             payload: response.data.response.posts }

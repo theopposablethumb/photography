@@ -23,18 +23,22 @@ class Blog extends React.Component {
     }
 
     renderBlogPosts() {
-        return this.props.recentPosts.map(post => {
-            return (
-                <article key={post.id}>
-                    <h3>
-                        <Link to={`/blog/${post.title.replace(/\s+/g, '_').toLowerCase()}-${post.id}`}>
-                            {post.title}
-                        </Link>
-                    </h3>
-                    <p className="date">Published on {this.formatDate(post.date)}</p>
-                </article>
-            )
-        })
+        if (!this.props.recentPosts) {
+            return null;
+        } else {
+            return this.props.recentPosts.map(post => {
+                return (
+                    <article key={post.id}>
+                        <h3>
+                            <Link to={`/blog/${post.title.replace(/\s+/g, '_').toLowerCase()}-${post.id}`}>
+                                {post.title}
+                            </Link>
+                        </h3>
+                        <p className="date">Published on {this.formatDate(post.date)}</p>
+                    </article>
+                )
+            })
+        }
     }
 
     render() {
