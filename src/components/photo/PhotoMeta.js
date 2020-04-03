@@ -16,7 +16,7 @@ class PhotoMeta extends React.Component {
 
     formatDate(date) {
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        const dateObj = new Date(this.props.meta.meta.exif[31].raw._content.replace(':', '/'));
+        const dateObj = new Date(this.props.meta.meta.exif[31].raw._content.replace(/:/g, '/'));
         const year = dateObj.getFullYear();
         const monthName = months[dateObj.getMonth()]; //get the month in the date as a number and pass it as an index to the array or month strings
         const day = dateObj.getDate();
