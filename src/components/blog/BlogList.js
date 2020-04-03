@@ -12,6 +12,7 @@ class Blog extends React.Component {
     formatDate(postDate) {
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        
         const date = new Date(postDate.replace(/-/g, '/'));
         const year = date.getFullYear();
         const monthName = months[date.getMonth()]; //get the month in the date as a number and pass it as an index to the array or month strings
