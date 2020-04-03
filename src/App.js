@@ -10,6 +10,7 @@ import Blog from './components/blog/Blog';
 import BlogPost from './components/blog/BlogPost';
 import Contact from './components/static/Contact'
 import ScrollToTop from './components/ScrollToTop';
+import Cookie from './components/static/Cookie';
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                 <Route path='/blog' exact component={Blog} />
                 <Route path='/blog/:post-:id' component={BlogPost} />
                 <Route path='/contact' component={Contact} />
+                <Route path='/cookies' component={Cookie} />
                 <Footer />
             </BrowserRouter>
         </>

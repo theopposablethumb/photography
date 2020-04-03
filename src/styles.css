@@ -138,6 +138,10 @@ label, button {clear: left;}
 button {background: #E6B1A4; margin: 1em 0 0 12vw; box-shadow: none;}
 button:hover {background: #FAD7C3;}
 
+.cookie { width: 100%; padding: 1em 20% 1em 20%; background: #0F1422; color: #B59198; font-size: 0.8em; box-sizing: border-box;}
+.cookie p {margin: 0;}
+.cookie a {color: #E6B1A4}
+
 @media screen and (max-width: 1260px) {
 	.landscape ul.meta li {display: inline-block; width: 49%;}
 	footer div, footer ul.social {float: none;}
@@ -219,6 +223,7 @@ button:hover {background: #FAD7C3;}
 
 @media screen and (max-width: 450px) {
 	footer {padding: 1em 0;}
+	.cookie {padding: 1em 10%;}
 	
 	footer p, footer ul.social {display: block; padding: .8em 10%;}
 	footer p {margin: 0;}
