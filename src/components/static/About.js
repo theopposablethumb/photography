@@ -2,6 +2,7 @@ import React from 'react';
 import bren1 from '../../images/bren1.jpg';
 import bren2 from '../../images/bren2.jpg';
 import bren3 from '../../images/bren3.jpg';
+import portrait from '../../images/bren-small2.jpg';
 
 const images = [bren1, bren2, bren3];
 
@@ -28,9 +29,10 @@ const About = () => {
                 <div style={styles()}>
 
                 </div>
-                <div className="centered">
+                <div className="centered about">
                     <article>
                         <h1>About Brendan</h1>
+                        <img src={portrait} className='profile' alt='Portrait of Brendan' title='Brendan' />
                         <p>I'm a photographer who likes to travel. I've travelled through Europe, Asia, and South America, always with a camera. I enjoy exploring, and often stray from the beaten tourist trails. I enjoy meeting new people and learning about different cultures, and I'm always ready to make a new friend while travelling.</p>
                         <p>I got my first disposable film camera when I was about 4 years old as a free gift collected which my parents redeemed through tokens cut out from cereal boxes. I remember using it to take a photo of my family sitting down and having a picnic, and I remember my first photos developed as a series of blurred smudges of colour. Even then I used to dream of one day adventuring abroad to photograph different countries and the people that live there. Much later in life I got the opportunity to do exactly that, and it transformed my life and world view.</p>
                         <p>I'm naturally curious, and exploring and photography are a great way for me to explore the things in the world I have a natural curiosity about. I love wandering around busy mega cities photographing the streets and hiking up mountains with a tent so I can photograph the milky way at night.</p>

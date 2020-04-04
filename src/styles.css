@@ -56,9 +56,9 @@ div.contact {background: #7B707C; color: #FAD7C3;}
 div.contact a {color: #E6B1A4; }
 div.contact a:hover {color: #FAD7C3;}
 
-article {margin: 6em 0 0;}
+article {margin: 4em 0 0;}
 
-.intro article, .blog article {position: relative; padding: 0; background: none; box-shadow: none;}
+.intro article, .blog article, .about article {position: relative; padding: 0; background: none; box-shadow: none;}
 .blog article {padding-bottom: 4em; border-bottom: 2px solid #E6B1A4;}
 .blog article:last-child {padding-bottom: 2em; border-bottom: none;}
 article.intro {margin-top: 6.4em; border-bottom: none; padding-bottom: 2em;}
