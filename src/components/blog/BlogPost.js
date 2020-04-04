@@ -16,7 +16,7 @@ class BlogPost extends React.Component {
 
     formatDate(postDate) {
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturdays'];
         
         const date = new Date(postDate.replace(/-/g, '/'));
         const year = date.getFullYear();
