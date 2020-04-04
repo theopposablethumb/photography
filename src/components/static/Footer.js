@@ -14,7 +14,7 @@ const Footer = () => {
                     <li className="pf"> <a href="https://brenm.picfair.com">brenm.picfair.com</a></li>
                 </ul>
             </footer>
-            <div className="cookie"><p>This website uses cookies. <Link to='/cookies'>Read more about cookies on this website</Link></p></div>
+            <div className="cookie"><p>This website uses cookies. <Link to='/cookies'>Read more about the cookies used on this website</Link></p></div>
         </>
     )
 }
