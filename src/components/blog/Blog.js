@@ -52,7 +52,7 @@ class Blog extends React.Component {
                 <article className="intro">
 					<h1>Hi, I'm Brendan</h1>
                     <img src={portrait} className='profile' alt='Portrait of Brendan' title='Brendan' />
-					<p>I'm a photographer who likes to travel and learn about new cultures. I shoot mostly with prime lenses as I enjoy the creative challenge of constraints, and I have a love for vintage glass.</p>
+					<p>I'm a photographer who likes to travel and learn about new cultures. I shoot mostly with prime lenses as I enjoy the creative challenge of constraints, and I have a love for vintage glass. <Link to='/about-brendan'>Read my personal profile.</Link></p>
 				</article>
                 {this.renderBlogPosts()}
             </div>

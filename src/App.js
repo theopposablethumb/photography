@@ -11,6 +11,7 @@ import BlogPost from './components/blog/BlogPost';
 import Contact from './components/static/Contact'
 import ScrollToTop from './components/ScrollToTop';
 import Cookie from './components/static/Cookie';
+import About from './components/static/About';
 
 const App = () => {
     return (
@@ -19,6 +20,7 @@ const App = () => {
                 <ScrollToTop />
                 <Header />
                 <Route path='/' exact component={Home} />
+                <Route path='/about-brendan' component={About} />
                 <Route path='/photography' exact component={AlbumList} />
                 <Route path='/photography/:album-:aid' exact component={Album} />
                 <Route path='/photography/:album-:aid/:photo/:pid' component={Photo} />
