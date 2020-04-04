@@ -1,8 +1,9 @@
 import React from 'react';
 import bren1 from '../../images/bren1.jpg';
 import bren2 from '../../images/bren2.jpg';
+import bren3 from '../../images/bren3.jpg';
 
-const images = [bren1, bren2];
+const images = [bren1, bren2, bren3];
 
 const randomImage = () => {
     let image = Math.floor(Math.random() * images.length);
