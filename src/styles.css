@@ -203,7 +203,9 @@ button:hover {background: #FAD7C3;}
 	
 	article {padding: 3.2em 0 1.8em; margin: 0.15em;}
 	article.intro {padding: 0 0 3em;}
-	
+	.blogList article {margin: 3.2em 0 1.6em; padding: 0;}
+
+
 	div.albumCover {display: block; width: 100%; margin: 0.8em 0 0;}
 
 	.portrait figcaption, .landscape figcaption {padding-top: 1em;}
