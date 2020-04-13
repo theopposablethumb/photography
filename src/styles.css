@@ -142,22 +142,23 @@ article img {width: 100%; height: auto; margin: 1.6em 0 0.8em;}
 article img:first-child {margin: 0;}
 img.profile {position: absolute; top: 0; left: -120px; width: 75px; height: auto; border: 5px solid #B59198; margin: 0; background: #7B707C;}
 
-.blog article::before {content: ''; position: absolute; top: 0; left: -120px; width: 75px; height: 122px; background: url('../src/images/blogpost.png') no-repeat;}
+.blog article::before {content: ''; position: absolute; top: 0; left: -120px; width: 75px; height: 122px; background: url('../src/images/blogpost.svg') no-repeat;}
 
 .blogList article {margin-top: 3.2em; }
 
 ul.social {list-style-type: none; padding: 0; float: left; width: 50%;}
-footer ul.social {float: right; width: fit-content; margin-top: 0; font-size: 1em;}
-ul.social a {display: block; width: fit-content; padding: 0.5em 0 0.5em 38px;}
-li.ig {background: url(./images/ig-dark.png) left center no-repeat;}
-li.s6 {background: url(./images/society6-dark.png) left center no-repeat;}
-li.pf {background: url(./images/picfair-dark.png) left center no-repeat;}
-li.li {background: url(./images/linkedin-dark.png) left center no-repeat;}
+footer ul.social {float: right; width: fit-content; margin-top: 0.8em; font-size: 1em;}
+ul.social a {display: block; width: fit-content; padding: 0.2em 0 0.2em 2.3em; margin: 0 0 1.6em 0;}
+footer .social a {padding:  0.1em 0 0.1em 2.3em; margin: 0;}
+li.ig {background: url(./images/ig-dark.svg) left center no-repeat;}
+li.s6 {background: url(./images/society6-dark.svg) left center no-repeat;}
+li.pf {background: url(./images/picfair-dark.svg) left center no-repeat;}
+li.li {background: url(./images/linkedin-dark.svg) left center no-repeat;}
 
-.contact li.ig, footer li.ig {background: url(./images/ig-light.png) left center no-repeat;}
-.contact li.s6 {background: url(./images/society6-light.png) left center no-repeat;}
-.contact li.pf, footer li.pf {background: url(./images/picfair-light.png) left center no-repeat;}
-.contact li.li {background: url(./images/linkedin-light.png) left center no-repeat;}
+.contact li.ig, footer li.ig {background: url(./images/ig-light.svg) left center no-repeat;}
+.contact li.s6 {background: url(./images/society6-light.svg) left center no-repeat;}
+.contact li.pf, footer li.pf {background: url(./images/picfair-light.svg) left center no-repeat;}
+.contact li.li {background: url(./images/linkedin-light.svg) left center no-repeat;}
  
 div.albumCover, div.primary {display: flex; width: 49%; height: 350px; box-sizing: border-box; position: relative; float: left; width: 49%; margin: 2% 0 0;}
 div.primary {width: 100%; margin: 2% 2% 2% 0;}
