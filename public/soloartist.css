@@ -44,6 +44,9 @@ header p {font-size: 1.8em; font-style: italic; width: 75%; display: inline-bloc
 .instructions div.flex:last-of-type p {line-height: 2em;;}
 .instructions div.flex:last-of-type p strong {font-size: 2em; display: block;}
 
+.instructions div:nth-child(2) h2:nth-child(4) strong:first-child {color: #5CA4F9;}
+.instructions div:nth-child(2) h2:nth-child(4) strong:last-child {color: #FEF976;}
+
 article.round {flex-grow: 1; width: 27%; margin: 2.5em 3%; background: #f7f7f7; border-radius: 1em; overflow: hidden;}
 article.circle h2 {background: #5CA4F9; padding: 1em; margin-top: 0; box-sizing: border-box; text-transform: uppercase; font-size: 1.1em; font-weight: normal; line-height: 1.5em; width: 100%}
 .instructions article.circle h2 strong {font-size: 2.4em; color: #f7f7f7}
