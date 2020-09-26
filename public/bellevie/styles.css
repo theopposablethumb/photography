@@ -7,6 +7,7 @@ h2, h3 {font-size: 3em; font-weight: 300; margin-bottom: 0.5em;}
 p {font-size: 1em; line-height: 1.3em;}
 
 h1 span {display: block; width: fit-content; background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #B3E2F5 40%);}
+p span {background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #B3E2F5 40%);}
 
 a.button {display: block; padding: 0.5em; margin: 1.6em 0; border-radius: 6px; font-size: 1.3em; font-weight: bold; width: fit-content;}
 .phone, .email {display: block; padding: 0 0 0 1.5em; margin: 0.8em 0; font-size: 1.5em; position: relative;}
@@ -23,12 +24,14 @@ a.button {display: block; padding: 0.5em; margin: 1.6em 0; border-radius: 6px; f
 .centered {text-align: center}
 
 .wide {width: 90%; margin: 3.2em auto;}
-.half {width: 50%; margin: 3.2em auto;}
+.half {width: 50%; margin: 3.2em 0;}
 
 .flex {display: flex; flex-wrap: wrap;}
 .thirds {width: 30%; margin: 0 1.5%;}
 .quarters {width: 22%; margin: 0 1.5%;}
 .fifths {width: 17%; margin: 0 1.5%;}
+
+.flex h2 {flex-basis: 100%;}
 
 .halves img {width: 50%; height: 400px; background: #ccc;}
 .halves div, .halves section {width: 50%; box-sizing: border-box; padding: 2.6em;}
@@ -37,7 +40,7 @@ a.button {display: block; padding: 0.5em; margin: 1.6em 0; border-radius: 6px; f
 
 .border {border: 1px solid #B3E2F5; box-sizing: border-box;}
 
-header {margin: 1.3em 0 0 0; width: 100%; padding: 1em; background: #f7f7f7; box-sizing: border-box; overflow: auto; position: fixed;}
+header {margin: 1.3em 0 0 0; width: 100%; padding: 1em; background: #f7f7f7; box-sizing: border-box; overflow: auto; position: fixed; z-index: 2;}
 header .content {max-width: 1400px; margin-top: 0;}
 header img {float: left;}
 header nav {float: right;}
@@ -72,8 +75,36 @@ article .button {margin: 0 0.8em 0.8em; font-weight: 300;}
 .card div {padding-top: 0; padding-bottom: 0;} 
 .card h2 {font-size: 2em;}
 
+.shadow {box-shadow: 0px 6px 20px 3px rgba(0,0,0,0.13)}
+.rounded {border-radius: 6px;}
+
+ul.gallery {padding: 0; list-style-type: none;}
+.gallery li {position: relative;}
+.gallery img {width: 100%; height: 100%; }
+.gallery p {position: absolute; top: 0.6em; left: 0; padding: 0.6em; background: rgba(256, 256, 256, 0.8); font-weight: bold; color: #1B5C75; font-size: 1.3em}
+
 .locations h2, .locations ul {font-size: 2em; font-weight: bold;}
 .locations ul {font-weight: 300; line-height: 1.8em; list-style-type: none; padding: 0; column-count: 4; column-fill: balance; column-gap: 2.6em; width: 100%;}
 .locations li {text-transform: capitalize;}
 
 .stories h2 {font-size: 2em; margin: 0 0 1.3em 0; text-transform: uppercase; font-weight: bold;}
+
+.faq {padding: 0.8em 5.2em 0.8em 2.6em; margin: 2.1em 0; position: relative;}
+.faq:after {content: "x"; font-size: 2em; position: absolute; top: 0.5em; right: 0.8em;}
+.faq.closed p {display: none;}
+.faq.closed:after {content: "+"; font-size: 2em; position: absolute; top: 0.5em; right: 0.8em;}
+
+table {border-collapse: collapse; position: relative;}
+table:before {content: "Vs"; position: absolute; top: 0.6em; left: 45%; font-size: 3em; color: #1B5C75;}
+th {background: #f7f7f7;}
+tr {border-top: 3px solid #f7f7f7;}
+tr:nth-child(even) {background: #B3E2F5}
+tr:nth-child(odd) {background: #f1f1f1}
+th:nth-child(odd) {padding: 1.3em 6em 0.8em 3em;}
+td:nth-child(odd) {padding: 0.8em 6em 0.8em 3em;}
+th:nth-child(even) {padding: 1.3em 3em 0.8em 6em;}
+td:nth-child(even) {padding: 0.8em 3em 0.8em 6em;}
+th {text-align: left;}
+td {width: 50%; vertical-align: top;}
+table h2 {font-size: 2em; font-weight: bold; color: #1B5C75;}
+table p {font-size: 1.3em;}
