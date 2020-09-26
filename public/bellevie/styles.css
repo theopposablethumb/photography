@@ -1,0 +1,63 @@
+body {background: #f1f1f1; color: #111; font-size: 16px; font-family: Arial, Helvetica, sans-serif; padding: 0; margin: 0; }
+
+h1 {font-size: 3.5em; font-weight: 300;}
+h2, h3 {font-size: 3em; font-weight: 300; margin-bottom: 0.5em;}
+
+p {font-size: 1em; line-height: 1.3em;}
+
+h1 span {display: block; width: fit-content; background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #B3E2F5 40%);}
+
+a.button {display: block; padding: 0.5em; margin: 1.6em 0; border-radius: 6px; font-size: 1.3em; font-weight: bold; width: fit-content;}
+a.phone, a.email {display: block; padding: 0.5em; margin: 1.3em 0;}
+.button.dark {background: #1B5C75; color: #fff;}
+.button.light {background: #B3E2F5; color: #1B5C75;} 
+.button.midtone {background: #47DBF5; color: #1B5C75;;}
+
+.section {max-width: 1200px; margin: auto;}
+
+.centered {text-align: center}
+
+.wide {width: 90%; margin: 3.2em auto;}
+.half {width: 50%; margin: 3.2em auto;}
+
+.flex {display: flex; flex-wrap: wrap;}
+.thirds {width: 28%; margin: 0 2.5%;}
+.quarters {width: 20%; margin: 0 2.5%;}
+.fifths {wdith: 15%; margin: 0 2.5%;}
+
+.halves img {width: 50%; height: 400px; background: #ccc;}
+.halves div, .halves section {width: 50%; box-sizing: border-box; padding: 2.6em;}
+.third img {width: 33%; height: fit-container; background: #ccc;}
+.third div {width: 66%; box-sizing: border-box; padding: 2.6em;}
+
+.border {border: 1px solid #B3E2F5; box-sizing: border-box;}
+
+header {margin: 1.3em 0 0 0; width: 100%; padding: 1em; background: #f7f7f7; box-sizing: border-box; overflow: auto;}
+header img, nav {float: left;}
+nav {margin: 0.6em 2em 0.6em 1em;}
+nav a {display: inline-block; padding: 0.5em; font-size: 1.3em}
+
+header a.button {float: left; margin: 0.4em 1em;}
+
+footer {width: 100%; padding: 2.6em; background: #1B5C75; color: #fff; box-sizing: border-box;}
+footer h2 {font-size: 1.3em;}
+footer p, footer ul {font-size: 0.9em; margin: 0.3em;}
+footer ul {list-style-type: none; line-height: 2.6em;}
+
+.articles {margin: 2.6em 0;}
+.articles img {width: 100%; height: 200px; background: #ccc;}
+.articles h2 {font-size: 1.2em; font-weight: bold; padding: 0 0.8em;}
+.articles p, .articles h2, .services p, .services h2 {padding: 0 0.8em;}
+
+.intro p, .testimonials p {font-size: 1.4em;}
+
+.hero , .testimonials {width: 90%; margin: 4em auto; }
+.hero div {width: 50%}
+.hero p {font-size: 1.4em; padding-right: 2.5em;}
+.hero img {width: 50%; height: 400px; background: #ccc;}
+
+.services h2 {font-size: 1.2em; font-weight: bold;}
+
+.location ul {column-count: 4; column-fill: balance; column-gap: 2.6em;}
+
+.stories h2 {font-size: 2em; margin: 0 0 1.3em 0; text-transform: uppercase; font-weight: bold;}
