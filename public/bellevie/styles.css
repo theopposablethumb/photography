@@ -1,12 +1,15 @@
-body {font-size: 16px; line-height: 1.5em; font-family: 'Roboto', sans-serif; font-weight: 300; background: #FAFAFA; color: #333; margin: 0; padding: 0;}
+body {font-size: 16px; line-height: 1.5em; font-family: 'Roboto', sans-serif; font-weight: 400; background: #FAFAFA; color: #333; margin: 0; padding: 0;}
 
-h1 {font-size: 3em; margin: 1.33em 0 0 0;}
+h1 {font-size: 3em; font-weight: 400; color: #185D6F; margin: 1.33em 0 1em 0;}
 h1.custom {font-size: 4em;}
-h2 {font-size: 2em; }
-h2.large {font-size: 3em; line-height: 1em; font-weight: 300; margin: 0.833em 0 0.667em 0;}
+h2 {font-size: 2em; line-height: 1.5em; margin: 0 0 1em 0;}
+h2.small {font-size: 1.25em;}
+h2.large {font-size: 3em; line-height: 1em; font-weight: 400; margin: 0.833em 0 0.667em 0;}
+h2.light {font-weight: 400; margin-bottom: 0;}
 h3 {font-size: 1.5em; margin: 1em 0 0 0;}
 h4 {font-size: 1.25em; font-weight: 500; margin: 1.6em 0 0 0;}
-p, ul, ol, table {font-size: 1.25em; margin: 1em 0 0 0;}
+p, ul, ol, table, h2.small {font-size: 1.25em; margin: 1em 0 0 0;}
+ul {padding: 0 1em;}
 ul ul {font-size: 1em;}
 a {color: #BA7800; text-decoration: none;}
 a:hover {text-decoration: underline;} 
@@ -19,10 +22,12 @@ a.read-more {padding-right: 16px; background-image: url('/images/image.svg');}
 strong {font-weight: 500;}
 .small {font-size: 1em;}
 
-h2 span {display: block; width: fit-content; background: linear-gradient(180deg, #FFF 60%, #F8E8B1 40%); }
+h2 span {background: linear-gradient(180deg, #FAFAFA 60%, #F8E8B1 40%);}
+h2.large span {display: block; width: fit-content; }
 p span {background: linear-gradient(180deg,rgba(255,255,255,0) 60%, #B3E2F5 40%);}
 
 .centered {text-align: center}
+.centered h1, .centered h2, .centered h3, .centered h4 {margin-left: auto; margin-right: auto;}
 .padded {padding: 0 6em;} 
 
 img, .rounded {border-radius: 4px;}
@@ -33,7 +38,7 @@ img, .rounded {border-radius: 4px;}
 .offwhitebg {background: #FAFAFA;}
 
 .button {font-size: 1em; font-weight: 500; padding: 0.625em 2em; display: inline-block; margin: 1.5em 1.5em 0 0; border-radius: 8px;}
-.button.dark {background: #185D6F; color: #FFF;}
+.dark {background: #185D6F; color: #FFF;}
 .button.dark:hover {background: #489982;}
 .button.light {background: #FFC247; color: #333;}
 .button.light:hover {background: #BA7800; color: #FFF;}
@@ -45,20 +50,33 @@ img, .rounded {border-radius: 4px;}
 .borders:before { content: " "; position: absolute; z-index: -1; top: 4px; left: 4px; right: 4px; bottom: 4px; border: 4px solid #2D9CDB; }
 
 header, main, footer {width: 100%; box-sizing: border-box;}
-header {position: fixed; z-index: 2; top: 0; padding: 1.25em 0 0 0; background: #FAFAFA;}
+header {position: fixed; z-index: 3; top: 0; padding: 1.25em 0 0 0; background: #FAFAFA;}
 main {margin: 8em 0 0 0;}
 footer {background: #185D6F; color: #FFF; padding-bottom: 6.25em;}
 .section {overflow: auto; padding-bottom: 2.5em;}
 .content {max-width: 1255px; margin: 2.375em auto 0 auto; box-sizing: border-box;}
+footer .content {margin: 0 auto;}
 article {width: 100%;}
 
 .flex {display: flex; flex-wrap: wrap;}
-.thirds {width: 30%; margin: 0 1.5%; box-sizing: border-box;}
+.justifyLeft {justify-content: left;}
+.justifyCenter {justify-content: center;}
+.halves {width: 50%;}
+.thirds, .cover {width: 32%; margin: 0 1.5% 0 0;}
+.cover img {width: 100%; height: 100%;}
+.cover:last-child {margin-right: 0;}
+.thirds {padding: 2.5em; box-sizing: border-box;}
+.thirds:nth-child(3) {margin-right: 0;}
+.twoThirds {width: 65%; margin: 0 1.5% 0 0;}
 .quarters {width: 23.85%; margin: 0 1.5% 0 0; padding: 0 1em 1.5em 1em; box-sizing: border-box;}
-.quarters:last-child {margin-right: 0;}
-.fifths {width: 17%; margin: 0 3%; box-sizing: border-box;}
+.quarters:nth-child(4) {margin-right: 0;}
+.fifths {width: 17%; margin: 0 6% 0 0; box-sizing: border-box;}
 
 .fullWidth {width: 100%;}
+
+div.left {float: left;}
+
+.hidden {display: none;}
 
 .custom-html-widget {margin: 0 auto;}
 
@@ -83,7 +101,7 @@ header nav ul ul li {display: list-item; }
 header nav ul ul a {padding: 8px 24px;}
 header nav ul ul a:hover {background: #185D6F; color: #FFF;}
 
-footer h3 {font-weight: 300;}
+footer h3 {font-weight: 400;}
 footer p, footer .sub-menu {font-size: 0.875em;}
 footer a {color: #FFF;}
 
@@ -92,7 +110,7 @@ footer ul.menu {display: flex; flex-grow: 1; font-size: 1em; font-weight: 700; m
 footer ul.menu a {display: block; padding: 0.375em 0.375em 0.75em 0;}
  
 footer ul.menu li {width: 25%;}
-footer ul.sub-menu {font-weight: 300;}
+footer ul.sub-menu {font-weight: 400;}
 footer ul.menu li:last-child ul.sub-menu {font-weight: 700;}
 footer ul.sub-menu li {width: 100%;}
 footer ul.sub-menu a {display: block; padding: 0.375em 0.375em 0.375em 0;}
@@ -106,10 +124,73 @@ footer ul.sub-menu a {display: block; padding: 0.375em 0.375em 0.375em 0;}
 .hero div.content div:nth-child(2):before {content: " "; height: 60px; width: 270px; position: absolute; left: -80px; bottom: -25px; z-index: -1; background: linear-gradient(90deg, #FAFAFA 8px, transparent 1%) center, linear-gradient(#FAFAFA 8px , transparent 1%) center, #D3F1F1; background-size: 12px 12px;}
 .hero div.content div:nth-child(2):after {content: " "; height: 140px; width: 140px; position: absolute; right: 40px; top: -50px; z-index: -1; border-radius: 70px; background: #D3F1F1;}
 
+.section.whitebg .custom-html-widget:first-child {position: relative; z-index: 2;}
+.section.whitebg .custom-html-widget:first-child:before {content: " "; height: 60px; width: 270px; position: absolute; right: -25px; bottom: -25px; z-index: -1; background: linear-gradient(90deg, #FFF 8px, transparent 1%) center, linear-gradient(#FFF 8px , transparent 1%) center, #D3F1F1; background-size: 12px 12px;}
+.section.whitebg .custom-html-widget:first-child:after {content: " "; height: 60px; width: 270px; position: absolute; left: -18px; top: -22px; z-index: -1; background: linear-gradient(90deg, #FFF 8px, transparent 1%) center, linear-gradient(#FFF 8px , transparent 1%) center, #F4A4BF; background-size: 12px 12px;}
+
 .values:first-child { position: relative; }
 .values:first-child:before{content: " "; position: absolute; bottom: 66px; left: -13px; width: 12px; height: 186px; background: #EDF7F6; border-right: 1px solid #E4E4E4;}
+
 article.services {padding-top: 1em;}
-.services p {font-size: 1em; margin-top: 0.5em;}
+.services h4 {font-weight: 700;}
+.services a.chevron {display: block; font-size: 1.25em; padding: 1em 0;}
+
+.values p, .values ul, .stories p, .services p, .services ul, .standards p, .contactTile p, .staff p, .steps p{font-size: 1em;}
+
+.stories img {box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);}
+
+.cover {position: relative;}
+.cover p {position: absolute; top: 1.5em; left: 0; padding: 0.75em 1.5em; min-width: 186px; background: rgba(255, 255, 255, 0.7);}
+.cover a {color: #185D6F;}
+.cover a:hover p {text-decoration: underline;}
+
+.faq {padding: 1.5em 2.5em; box-sizing: border-box; margin-bottom: 1.5em;}
+.faq h2 {color: #185D6F; margin: 0;}
+.faq.closed p {display: none;}
+
+.contactTile .content {margin: 0 auto 1em auto;}
+.contactTile h2 {margin-bottom: 0; font-weight: 400;}
+.contactTile h4 {color: #185D6F;}
+
+.standards {width: fit-content; margin-bottom: 1em;}
+.standards img {display: block;}
+.standards h2 span {background: none;}
+.standards div:first-child {width: 599px; padding: 2em 2em 1.5em 6.625em; box-sizing: border-box;}
+.standards div:last-child {width: 466px;}
+
+.modal {background: #F8F8F5; padding: 7em 6.625em; width: 867px; box-sizing: border-box; position: relative;}
+.modal h2 {font-weight: 400; margin-bottom: 2em}
+.modal h2 span {background: linear-gradient(180deg, #F8F8F5 60%, #F8E8B1 40%);}
+.modal p {margin-bottom: 2em;}
+.modal a.close {position: absolute; top: 1em; left: 2em; display: block; padding: 1em;}
+
+.branchTeam {width: 891px; margin-bottom: 3em;}
+.branchTeam:last-child {margin-bottom: 0;}
+.branchTeam div {width: 372px; padding: 5em 1.5em; box-sizing: border-box;}
+.branchTeam div:last-child {width: 519px; padding: 0;}
+.branchTeam a {color: #333; background: linear-gradient(180deg, #FFF 60%, #F8E8B1 40%);}
+
+.branchListing {padding: 1em 0; margin: 1em 0;}
+.branchListing a {font-size: 2em; color: #185D6F; text-decoration: underline; padding: 0 0 0 5.4375em;}
+.branchListing a:hover {text-decoration: none;}
+.branchListing h2 {line-height: inherit;}
+.branchListing h2, .branchListing p, .branchListing a {margin: 0 2em 0 0;}
+
+.compare h2 {color: #185D6F; font-size: 3em; line-height: 1em; font-weight: 400; margin: 0.833em 0 0.667em 0;}
+.compare div.left:last-child {width: 537px; margin-left: 2.5em;}
+.compare p {margin-top: 0;}
+
+.staff {margin-bottom: 4.375em; padding: 0;}
+.staff h4 {text-transform: uppercase; margin-top: 0.8em; padding: 0 1em;}
+.staff p.jobTitle {color: #185D6F; padding: 0 1em;}
+.page-about-bellevie .staff {margin-bottom: 0;} 
+
+.job {padding: 1.5em 2em; margin-bottom: 1.5em;}
+.job h3 {color: #185D6F; font-weight: 400; margin-top: 1em;}
+.job .flex div {margin-left: 6em;}
+.job .flex p:first-child {margin-top: 0;}
+.job .visible {border-top: 4px solid #F8E8B1;}
+.job .button {margin-top: 2em;}
 
 .cta {margin-top: 8em;}
 .cta img {width: 50%;}
