@@ -38,17 +38,26 @@
 
         let audioSource;
         let analyser;
+        let gainNode;
+        let mic;
 
         let getSound = (stream) => {
             const audioCtx = new AudioContext();
+
+            gainNode = audioCtx.createGain();
+            
             mic = audioCtx.createMediaStreamSource(stream);
+            mic.connect(gainNode);
+
             analyser = audioCtx.createAnalyser();
             analyser.fftSize = 512;
             const bufferLength = analyser.frequencyBinCount;
             const dataArray = new Uint8Array(bufferLength);
             analyser.getByteTimeDomainData(dataArray);
             mic.connect(analyser);
-            analyser.connect(audioCtx.destination);
+            
+            //gainNode.connect(audioCtx.destination);
+            //gainNode.gain.value = 0;
 
             const barWidth = 5;
             let barHeight;
