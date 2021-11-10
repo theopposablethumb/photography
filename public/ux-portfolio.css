@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@200;400;600&family=Work+Sans:wght@200;300;400;600&display=swap');
+
+html {padding: 0; margin: 0;}
+body {font-family: 'Bitter', serif; font-size: 16px; padding: 0; margin: 0; background: #f7f7f7; color: #333;}
+h1, h2, h3, h4 {font-family: 'Work Sans', sans-serif;}
+h1 {font-weight: 200; letter-spacing: 1px; margin: 0;}
+h2, h3, h4 {margin-top: 1.75em;}
+h2 {font-weight: 300;}
+h3 {font-weight: 400;}
+h4 {font-weight: 600;}
+p {line-height: 1.75em;}
+
+h3 {border-bottom: 1px solid #e4e4e4; padding-bottom: 0.1em;}
+
+header {background: #333; overflow: auto; color: #f7f7f7; position: relative;}
+header, .content {padding: 1em 3em;}
+
+.right {position: absolute; bottom: 2em; right: 3em;}
+
+.image { width: 100vw; padding: 1em 0 0 0; position: relative; height: 80vh;}
+div.image:nth-of-type(2) { background: url('ux-images/process.png') no-repeat center; background-attachment: fixed; background-color: #fff;}
+div.image:nth-of-type(4) { background: url('ux-images/team-shifts.png') no-repeat center; background-attachment: fixed; background-color: #fff;}
+div.image:nth-of-type(6) { background: url('ux-images/shift.png') no-repeat center; background-attachment: fixed; background-color: #fff;}
+div.image:nth-of-type(8) { background: url('ux-images/livingathome.png') no-repeat center; background-attachment: fixed; background-color: #fff;}
