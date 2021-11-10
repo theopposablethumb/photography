@@ -12,13 +12,24 @@ p {line-height: 1.75em;}
 
 h3 {border-bottom: 1px solid #e4e4e4; padding-bottom: 0.1em;}
 
-header {background: #333; overflow: auto; color: #f7f7f7; position: relative;}
-header, .content {padding: 1em 3em;}
+header, footer {background: #333; overflow: auto; color: #f7f7f7; position: relative; padding: 1.5em 3em 1em 3em;}
+header a, footer a {color: #f7f7f7;}
+.content {padding: 1em 3em;}
 
 .right {position: absolute; bottom: 2em; right: 3em;}
 
-.image { width: 100vw; padding: 1em 0 0 0; position: relative; height: 80vh;}
-div.image:nth-of-type(2) { background: url('ux-images/process.png') no-repeat center; background-attachment: fixed; background-color: #fff;}
-div.image:nth-of-type(4) { background: url('ux-images/team-shifts.png') no-repeat center; background-attachment: fixed; background-color: #fff;}
-div.image:nth-of-type(6) { background: url('ux-images/shift.png') no-repeat center; background-attachment: fixed; background-color: #fff;}
-div.image:nth-of-type(8) { background: url('ux-images/livingathome.png') no-repeat center; background-attachment: fixed; background-color: #fff;}
+.flex {display: flex; flex-wrap: wrap; }
+.flex figure {width: 25%; margin: 0;}
+figure img {width: 100%; height: auto;}
+
+.image { width: 100vw; padding: 1em 0 0 0; position: relative; height: 80vh; box-shadow: inset 0px 6px 10px 0px rgba(0,0,0,0.25); }
+div.image:nth-of-type(2) { background: url('ux-images/process.jpg') no-repeat center; background-attachment: fixed; background-color: #fff; background-size: 1280px 510px;}
+div.image:nth-of-type(5) { background: url('ux-images/shift.png') no-repeat center; background-attachment: fixed; background-color: #fff;}
+
+@media screen and (max-width: 1024px) {
+  .flex figure {width: 50%;}
+} 
+
+@media screen and (max-width: 500px) {
+  .flex figure {width: 100%;}
+}
