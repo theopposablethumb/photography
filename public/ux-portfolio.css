@@ -16,9 +16,9 @@ h1, h2, h3, h4, p, ul { margin-left: 23vw; margin-right: 23vw; }
 
 header, footer {background: #333; overflow: auto; color: #f7f7f7; position: relative; padding: 1.5em 0 1em 0;}
 header a, footer a {color: #f7f7f7;}
-nav {padding: 0 23vw; background: #555; display: flex; }
-nav a {color: rgb(22, 56, 77); text-transform: capitalize; display: inline-block; background: #999; padding: 1em 1.75em; margin: 0; box-sizing: border-box;}
-nav a:hover {background: #aaa;}
+nav {padding: 0 23vw; background: #ccc; display: flex; }
+nav a {color: rgb(22, 56, 77); text-transform: capitalize; display: inline-block; background: #ccc; padding: 1em 1.75em; margin: 0; box-sizing: border-box;}
+nav a:hover {background: #dedede;}
 .content {padding: 1em 0;}
 
 .right {position: absolute; bottom: 2em; right: 20vw;}
