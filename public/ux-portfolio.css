@@ -8,15 +8,18 @@ h2, h3, h4 {margin-top: 1.75em;}
 h2 {font-weight: 300;}
 h3 {font-weight: 400;}
 h4 {font-weight: 600;}
-p {line-height: 1.75em;}
+p, li {line-height: 1.75em;}
 
 h3 {border-bottom: 1px solid #e4e4e4; padding-bottom: 0.1em;}
 
-h1, h2, h3, h4, p { margin-left: 20vw; margin-right: 20vw; }
+h1, h2, h3, h4, p, ul { margin-left: 23vw; margin-right: 23vw; }
 
-header, footer {background: #333; overflow: auto; color: #f7f7f7; position: relative; padding: 1.5em 3em 1em 3em;}
+header, footer {background: #333; overflow: auto; color: #f7f7f7; position: relative; padding: 1.5em 0 1em 0;}
 header a, footer a {color: #f7f7f7;}
-.content {padding: 1em 3em;}
+nav {padding: 0 23vw; background: #555; display: flex; }
+nav a {color: rgb(22, 56, 77); text-transform: capitalize; display: inline-block; background: #999; padding: 1em 1.75em; margin: 0; box-sizing: border-box;}
+nav a:hover {background: #aaa;}
+.content {padding: 1em 0;}
 
 .right {position: absolute; bottom: 2em; right: 20vw;}
 
@@ -33,7 +36,8 @@ div.image:nth-of-type(8) { background: url('ux-images/solo-art.jpg') no-repeat c
 img {border-radius: 4px;}
 
 @media screen and (max-width: 1200px) {
-  h1, h2, h3, h4, p { margin-left: 15vw; margin-right: 15vw; }
+  nav {padding: 1em 15vw;}
+  h1, h2, h3, h4, p, ul { margin-left: 15vw; margin-right: 15vw; }
   .right {right: 15vw;}
 }
 
@@ -43,6 +47,7 @@ img {border-radius: 4px;}
 
 @media screen and (max-width: 500px) {
   .flex figure {width: 100%;}
-  h1, h2, h3, h4, p { margin-left: 3vw; margin-right: 3vw; }
+  nav {padding: 1em 3vw;}
+  h1, h2, h3, h4, p, ul { margin-left: 3vw; margin-right: 3vw; }
   .right {right: 3vw;}
 }
